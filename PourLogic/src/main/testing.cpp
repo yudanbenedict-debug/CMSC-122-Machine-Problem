@@ -9,11 +9,13 @@ int main(){
     std::vector<std::stack<int>> board;
     Tube a(3);
     a.push('b');
-    a.push('c');
-    a.push('d');
+    a.push('b');
+    a.push('b');
     a.pop();
     std::cout << a.peek() << std::endl;
-
+    std::cout << a.topCount() << std::endl;
+    a.push('b');
+    std::cout << a.isSolved() << std::endl;
 }
 int pop(std::vector<std::stack<int>> &test, int index){
     if(test.at(index).empty()){
@@ -23,4 +25,5 @@ int pop(std::vector<std::stack<int>> &test, int index){
     test.at(index).pop();
     return temp;
 }
+
 
